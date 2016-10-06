@@ -12,9 +12,7 @@ class Database {
         db.once('open', console.log.bind(console, 'CONNECT TO PORT 3000'))
 
         Car.find('cars').then((cars)=>{
-            console.log(cars.length);
              if(cars.length==0) {
-                 console.log('wooohooo')
                 Car.create(
                     {make:'Honda', brand: 'Civic', year: 1995},
                     {make:'Toyota', brand: 'Avalon', year: 1995},
@@ -22,7 +20,7 @@ class Database {
                 ).then(()=>{
                     console.log('cars created')
                 })
-            
+
             } else {
                 console.log('already in database')
             }
